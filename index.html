@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Seu Nome | Desenvolvedor Full Stack</title>
+  <meta name="description" content="Portfólio de Seu Nome, desenvolvedor Full Stack. Projetos, habilidades, experiência e contato.">
+  <meta name="theme-color" content="#0a0c10">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Seu Nome | Desenvolvedor Full Stack">
+  <meta property="og:description" content="Portfólio de Seu Nome, desenvolvedor Full Stack. Projetos, habilidades, experiência e contato.">
+
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Aplica o tema salvo antes da pintura para evitar "flash" de cor -->
+  <script>
+    (function () {
+      var root = document.documentElement, theme = null;
+      root.classList.add('js');
+      try { theme = localStorage.getItem('theme'); } catch (e) {}
+      // Padrão: escuro. Para seguir o tema do sistema, troque 'dark' por:
+      // matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'
+      if (theme !== 'light' && theme !== 'dark') theme = 'dark';
+      root.setAttribute('data-theme', theme);
+    })();
+  </script>
+
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+  <!-- ============================== HEADER ============================== -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#home" class="logo" aria-label="Início">
+        <span class="logo__mark">&lt;/&gt;</span>
+        <span class="logo__text">seunome<span>.dev</span></span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Principal">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="#home">Home</a></li>
+          <li><a class="nav__link" href="#about">Sobre</a></li>
+          <li><a class="nav__link" href="#skills">Habilidades</a></li>
+          <li><a class="nav__link" href="#projects">Projetos</a></li>
+          <li><a class="nav__link" href="#experience">Experiência</a></li>
+          <li><a class="nav__link" href="#contact">Contato</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Alternar tema claro/escuro">
+          <svg class="icon icon--sun" aria-hidden="true"><use href="#i-sun"/></svg>
+          <svg class="icon icon--moon" aria-hidden="true"><use href="#i-moon"/></svg>
+        </button>
+        <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
+          <svg class="icon icon--menu" aria-hidden="true"><use href="#i-menu"/></svg>
+          <svg class="icon icon--close" aria-hidden="true"><use href="#i-x"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============================== HOME ============================== -->
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <p class="hero__eyebrow" data-reveal><span class="dot" aria-hidden="true"></span> Disponível para novos projetos</p>
+          <h1 class="hero__title" id="hero-title" data-reveal>
+            Olá, eu sou<br>
+            <span class="gradient-text">Seu Nome</span>
+          </h1>
+          <p class="hero__role" data-reveal>
+            <span class="mono">&gt;</span>
+            <span id="typed" data-roles='["Desenvolvedor Full Stack","Entusiasta de Front-end","Criador de Interfaces","Resolvedor de Problemas"]'>Desenvolvedor Full Stack</span><span class="caret" aria-hidden="true"></span>
+          </p>
+          <p class="hero__text" data-reveal>
+            Transformo ideias em produtos digitais rápidos, acessíveis e bem desenhados.
+            Escreva aqui, em duas ou três linhas, quem você é e o que gosta de construir.
+          </p>
+
+          <div class="hero__cta" data-reveal>
+            <a class="btn btn--primary" href="#projects">
+              Ver projetos
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+            </a>
+            <a class="btn btn--ghost" href="#contact">Fale comigo</a>
+          </div>
+
+          <ul class="socials" data-reveal aria-label="Redes sociais">
+            <li><a href="https://github.com/seu-usuario" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg></a></li>
+            <li><a href="https://www.linkedin.com/in/seu-usuario" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></a></li>
+            <li><a href="https://www.instagram.com/seu-usuario" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg></a></li>
+            <li><a href="mailto:seu@email.com" aria-label="E-mail"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></a></li>
+          </ul>
+        </div>
+
+        <div class="hero__visual" data-reveal>
+          <div class="photo">
+            <div class="photo__ring" aria-hidden="true"></div>
+            <img class="photo__img" src="assets/img/avatar.svg" alt="Foto de Seu Nome" width="360" height="360">
+            <span class="chip chip--float chip--1 mono">React</span>
+            <span class="chip chip--float chip--2 mono">Node.js</span>
+            <span class="chip chip--float chip--3 mono">TypeScript</span>
+          </div>
+        </div>
+      </div>
+
+      <a class="scroll-hint" href="#about" aria-label="Rolar para a seção Sobre">
+        <span class="scroll-hint__mouse" aria-hidden="true"></span>
+      </a>
+    </section>
+
+    <!-- ============================== SOBRE ============================== -->
+    <section class="section section--alt" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <header class="section__head" data-reveal>
+          <p class="eyebrow mono">01. Sobre</p>
+          <h2 class="section__title" id="about-title">Um pouco sobre mim</h2>
+        </header>
+
+        <div class="about__grid">
+          <div class="about__text" data-reveal>
+            <p>
+              Sou <strong>Seu Nome</strong>, desenvolvedor apaixonado por criar soluções que unem
+              tecnologia e boa experiência de uso. Conte aqui sua trajetória: como começou na programação,
+              o que te motiva e o tipo de problema que você mais gosta de resolver.
+            </p>
+            <p>
+              Fora do código, gosto de <strong>jogos</strong>, <strong>música</strong> e de aprender algo novo
+              toda semana. Troque estes interesses pelos seus.
+            </p>
+
+            <ul class="info-list">
+              <li><span class="info-list__label mono">Nome</span> Seu Nome Completo</li>
+              <li><span class="info-list__label mono">Cidade</span> Sua Cidade, UF</li>
+              <li><span class="info-list__label mono">E-mail</span> <a href="mailto:seu@email.com">seu@email.com</a></li>
+              <li><span class="info-list__label mono">Idiomas</span> Português (nativo), Inglês (intermediário)</li>
+            </ul>
+          </div>
+
+          <div class="stats" data-reveal>
+            <div class="stat">
+              <span class="stat__num"><span data-count="3">0</span>+</span>
+              <span class="stat__label">Anos de experiência</span>
+            </div>
+            <div class="stat">
+              <span class="stat__num"><span data-count="20">0</span>+</span>
+              <span class="stat__label">Projetos concluídos</span>
+            </div>
+            <div class="stat">
+              <span class="stat__num"><span data-count="12">0</span>+</span>
+              <span class="stat__label">Tecnologias</span>
+            </div>
+            <div class="stat">
+              <span class="stat__num"><span data-count="100">0</span>%</span>
+              <span class="stat__label">Dedicação</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== HABILIDADES ============================== -->
+    <section class="section" id="skills" aria-labelledby="skills-title">
+      <div class="container">
+        <header class="section__head" data-reveal>
+          <p class="eyebrow mono">02. Habilidades</p>
+          <h2 class="section__title" id="skills-title">Tecnologias e ferramentas</h2>
+          <p class="section__lead">O que uso no dia a dia para tirar projetos do papel.</p>
+        </header>
+
+        <div class="skills__grid">
+          <article class="card skill-card" data-reveal>
+            <h3 class="skill-card__title"><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg> Front-end</h3>
+            <ul class="tags">
+              <li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>TypeScript</li><li>React</li><li>Next.js</li><li>Tailwind CSS</li>
+            </ul>
+            <div class="meter" role="img" aria-label="Nível em Front-end: 90%"><span style="--lvl:90%"></span></div>
+          </article>
+
+          <article class="card skill-card" data-reveal>
+            <h3 class="skill-card__title"><svg class="icon" aria-hidden="true"><use href="#i-server"/></svg> Back-end</h3>
+            <ul class="tags">
+              <li>Node.js</li><li>Express</li><li>Python</li><li>REST APIs</li><li>PostgreSQL</li><li>MongoDB</li>
+            </ul>
+            <div class="meter" role="img" aria-label="Nível em Back-end: 75%"><span style="--lvl:75%"></span></div>
+          </article>
+
+          <article class="card skill-card" data-reveal>
+            <h3 class="skill-card__title"><svg class="icon" aria-hidden="true"><use href="#i-tool"/></svg> Ferramentas</h3>
+            <ul class="tags">
+              <li>Git</li><li>GitHub</li><li>Docker</li><li>Figma</li><li>Linux</li><li>VS Code</li>
+            </ul>
+            <div class="meter" role="img" aria-label="Nível em Ferramentas: 80%"><span style="--lvl:80%"></span></div>
+          </article>
+
+          <article class="card skill-card" data-reveal>
+            <h3 class="skill-card__title"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg> Soft skills</h3>
+            <ul class="tags">
+              <li>Comunicação</li><li>Trabalho em equipe</li><li>Resolução de problemas</li><li>Metodologias ágeis</li>
+            </ul>
+            <div class="meter" role="img" aria-label="Nível em Soft skills: 85%"><span style="--lvl:85%"></span></div>
+          </article>
+        </div>
+
+        <p class="learning" data-reveal>
+          <span class="mono">// estudando agora:</span> Go · Kubernetes · Testes automatizados
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================== PROJETOS ============================== -->
+    <section class="section section--alt" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <header class="section__head" data-reveal>
+          <p class="eyebrow mono">03. Projetos</p>
+          <h2 class="section__title" id="projects-title">Trabalhos selecionados</h2>
+          <p class="section__lead">Alguns projetos que mostram como eu penso e construo.</p>
+        </header>
+
+        <div class="filters" role="group" aria-label="Filtrar projetos" data-reveal>
+          <button class="filter is-active" type="button" data-filter="all" aria-pressed="true">Todos</button>
+          <button class="filter" type="button" data-filter="frontend" aria-pressed="false">Front-end</button>
+          <button class="filter" type="button" data-filter="backend" aria-pressed="false">Back-end</button>
+          <button class="filter" type="button" data-filter="mobile" aria-pressed="false">Mobile</button>
+        </div>
+
+        <div class="projects__grid" id="projectsGrid">
+          <!-- Para adicionar um projeto, copie um <article> inteiro e troque os dados.
+               data-category aceita: frontend, backend, mobile (separe por espaço). -->
+
+          <article class="card project" data-category="frontend backend" data-reveal>
+            <div class="project__thumb" style="--h1:262;--h2:190">
+              <span class="project__glyph mono" aria-hidden="true">&lt;Projeto 01 /&gt;</span>
+            </div>
+            <div class="project__body">
+              <h3 class="project__title">Projeto Um</h3>
+              <p class="project__text">Dashboard de métricas em tempo real, com gráficos interativos e autenticação.</p>
+              <ul class="tags tags--sm"><li>React</li><li>Node.js</li><li>PostgreSQL</li></ul>
+              <div class="project__links">
+                <a href="https://seu-projeto-um.vercel.app" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-external"/></svg> Demo</a>
+                <a href="https://github.com/seu-usuario/projeto-um" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> Código</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card project" data-category="frontend" data-reveal>
+            <div class="project__thumb" style="--h1:330;--h2:20">
+              <span class="project__glyph mono" aria-hidden="true">&lt;Projeto 02 /&gt;</span>
+            </div>
+            <div class="project__body">
+              <h3 class="project__title">Projeto Dois</h3>
+              <p class="project__text">Loja virtual responsiva, com carrinho, filtros e checkout simulado.</p>
+              <ul class="tags tags--sm"><li>Next.js</li><li>TypeScript</li><li>Tailwind</li></ul>
+              <div class="project__links">
+                <a href="https://seu-projeto-dois.vercel.app" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-external"/></svg> Demo</a>
+                <a href="https://github.com/seu-usuario/projeto-dois" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> Código</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card project" data-category="mobile" data-reveal>
+            <div class="project__thumb" style="--h1:160;--h2:210">
+              <span class="project__glyph mono" aria-hidden="true">&lt;Projeto 03 /&gt;</span>
+            </div>
+            <div class="project__body">
+              <h3 class="project__title">Projeto Três</h3>
+              <p class="project__text">Aplicativo mobile para organizar tarefas e hábitos, com notificações.</p>
+              <ul class="tags tags--sm"><li>React Native</li><li>Firebase</li></ul>
+              <div class="project__links">
+                <a href="https://github.com/seu-usuario/projeto-tres" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> Código</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card project" data-category="backend" data-reveal>
+            <div class="project__thumb" style="--h1:28;--h2:330">
+              <span class="project__glyph mono" aria-hidden="true">&lt;Projeto 04 /&gt;</span>
+            </div>
+            <div class="project__body">
+              <h3 class="project__title">Projeto Quatro</h3>
+              <p class="project__text">API REST documentada com autenticação JWT, testes e deploy via Docker.</p>
+              <ul class="tags tags--sm"><li>Node.js</li><li>Express</li><li>Docker</li></ul>
+              <div class="project__links">
+                <a href="https://github.com/seu-usuario/projeto-quatro" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> Código</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card project" data-category="frontend" data-reveal>
+            <div class="project__thumb" style="--h1:200;--h2:140">
+              <span class="project__glyph mono" aria-hidden="true">&lt;Projeto 05 /&gt;</span>
+            </div>
+            <div class="project__body">
+              <h3 class="project__title">Projeto Cinco</h3>
+              <p class="project__text">Landing page com animações suaves e foco em performance e acessibilidade.</p>
+              <ul class="tags tags--sm"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+              <div class="project__links">
+                <a href="https://seu-projeto-cinco.vercel.app" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-external"/></svg> Demo</a>
+                <a href="https://github.com/seu-usuario/projeto-cinco" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> Código</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card project" data-category="backend mobile" data-reveal>
+            <div class="project__thumb" style="--h1:45;--h2:350">
+              <span class="project__glyph mono" aria-hidden="true">&lt;Projeto 06 /&gt;</span>
+            </div>
+            <div class="project__body">
+              <h3 class="project__title">Projeto Seis</h3>
+              <p class="project__text">Bot de automação que integra APIs externas e envia relatórios diários.</p>
+              <ul class="tags tags--sm"><li>Python</li><li>APIs</li><li>Cron</li></ul>
+              <div class="project__links">
+                <a href="https://github.com/seu-usuario/projeto-seis" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> Código</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <p class="projects__more" data-reveal>
+          <a class="btn btn--ghost" href="https://github.com/seu-usuario" target="_blank" rel="noopener noreferrer">
+            <svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> Ver mais no GitHub
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================== EXPERIÊNCIA ============================== -->
+    <section class="section" id="experience" aria-labelledby="experience-title">
+      <div class="container">
+        <header class="section__head" data-reveal>
+          <p class="eyebrow mono">04. Experiência</p>
+          <h2 class="section__title" id="experience-title">Minha trajetória</h2>
+        </header>
+
+        <div class="tabs" role="tablist" aria-label="Experiência ou formação" data-reveal>
+          <button class="tab is-active" role="tab" id="tab-work" aria-controls="panel-work" aria-selected="true" type="button">
+            <svg class="icon" aria-hidden="true"><use href="#i-briefcase"/></svg> Experiência
+          </button>
+          <button class="tab" role="tab" id="tab-edu" aria-controls="panel-edu" aria-selected="false" tabindex="-1" type="button">
+            <svg class="icon" aria-hidden="true"><use href="#i-book"/></svg> Formação
+          </button>
+        </div>
+
+        <div class="timeline-wrap">
+          <ol class="timeline" role="tabpanel" id="panel-work" aria-labelledby="tab-work">
+            <li class="timeline__item" data-reveal>
+              <span class="timeline__dot" aria-hidden="true"></span>
+              <div class="card timeline__card">
+                <p class="timeline__date mono">2024 — Atual</p>
+                <h3 class="timeline__title">Desenvolvedor Full Stack</h3>
+                <p class="timeline__org">Nome da Empresa</p>
+                <ul class="timeline__list">
+                  <li>Desenvolvimento de funcionalidades front-end e back-end em produtos de grande uso.</li>
+                  <li>Redução do tempo de carregamento das páginas principais em 40%.</li>
+                  <li>Mentoria de desenvolvedores júnior e revisão de código.</li>
+                </ul>
+              </div>
+            </li>
+            <li class="timeline__item" data-reveal>
+              <span class="timeline__dot" aria-hidden="true"></span>
+              <div class="card timeline__card">
+                <p class="timeline__date mono">2022 — 2024</p>
+                <h3 class="timeline__title">Desenvolvedor Front-end</h3>
+                <p class="timeline__org">Outra Empresa</p>
+                <ul class="timeline__list">
+                  <li>Criação de interfaces responsivas com React e design system próprio.</li>
+                  <li>Integração com APIs REST e implementação de testes automatizados.</li>
+                </ul>
+              </div>
+            </li>
+            <li class="timeline__item" data-reveal>
+              <span class="timeline__dot" aria-hidden="true"></span>
+              <div class="card timeline__card">
+                <p class="timeline__date mono">2021 — 2022</p>
+                <h3 class="timeline__title">Estagiário de Desenvolvimento</h3>
+                <p class="timeline__org">Primeira Empresa</p>
+                <ul class="timeline__list">
+                  <li>Suporte ao time em manutenção de sistemas web e correção de bugs.</li>
+                  <li>Primeiros projetos com Git, metodologias ágeis e code review.</li>
+                </ul>
+              </div>
+            </li>
+          </ol>
+
+          <ol class="timeline" role="tabpanel" id="panel-edu" aria-labelledby="tab-edu" hidden>
+            <li class="timeline__item">
+              <span class="timeline__dot" aria-hidden="true"></span>
+              <div class="card timeline__card">
+                <p class="timeline__date mono">2020 — 2024</p>
+                <h3 class="timeline__title">Bacharelado em Ciência da Computação</h3>
+                <p class="timeline__org">Nome da Universidade</p>
+                <ul class="timeline__list">
+                  <li>Ênfase em engenharia de software e estruturas de dados.</li>
+                </ul>
+              </div>
+            </li>
+            <li class="timeline__item">
+              <span class="timeline__dot" aria-hidden="true"></span>
+              <div class="card timeline__card">
+                <p class="timeline__date mono">2023</p>
+                <h3 class="timeline__title">Curso Completo de Desenvolvimento Web</h3>
+                <p class="timeline__org">Plataforma de Cursos</p>
+                <ul class="timeline__list">
+                  <li>200 horas de conteúdo prático em JavaScript, React e Node.js.</li>
+                </ul>
+              </div>
+            </li>
+            <li class="timeline__item">
+              <span class="timeline__dot" aria-hidden="true"></span>
+              <div class="card timeline__card">
+                <p class="timeline__date mono">2022</p>
+                <h3 class="timeline__title">Certificação em Cloud Computing</h3>
+                <p class="timeline__org">Instituição Certificadora</p>
+                <ul class="timeline__list">
+                  <li>Fundamentos de computação em nuvem, redes e segurança.</li>
+                </ul>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== CONTATO ============================== -->
+    <section class="section section--alt" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <header class="section__head" data-reveal>
+          <p class="eyebrow mono">05. Contato</p>
+          <h2 class="section__title" id="contact-title">Vamos conversar?</h2>
+          <p class="section__lead">Tem um projeto, uma vaga ou só quer dar um oi? Me chame.</p>
+        </header>
+
+        <div class="contact__grid">
+          <div class="contact__info" data-reveal>
+            <ul class="contact__list">
+              <li>
+                <span class="contact__icon"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></span>
+                <div><span class="mono contact__label">E-mail</span><a href="mailto:seu@email.com">seu@email.com</a></div>
+              </li>
+              <li>
+                <span class="contact__icon"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg></span>
+                <div><span class="mono contact__label">Localização</span><span>Sua Cidade, UF — Brasil</span></div>
+              </li>
+              <li>
+                <span class="contact__icon"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></span>
+                <div><span class="mono contact__label">LinkedIn</span><a href="https://www.linkedin.com/in/seu-usuario" target="_blank" rel="noopener noreferrer">linkedin.com/in/seu-usuario</a></div>
+              </li>
+              <li>
+                <span class="contact__icon"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg></span>
+                <div><span class="mono contact__label">GitHub</span><a href="https://github.com/seu-usuario" target="_blank" rel="noopener noreferrer">github.com/seu-usuario</a></div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- O formulário abre o seu app de e-mail já preenchido (não precisa de servidor).
+               Troque o endereço em data-email. -->
+          <form class="card form" id="contactForm" data-email="seu@email.com" data-reveal novalidate>
+            <div class="field">
+              <label for="f-name">Nome</label>
+              <input id="f-name" name="name" type="text" autocomplete="name" placeholder="Como você se chama?" required>
+            </div>
+            <div class="field">
+              <label for="f-email">E-mail</label>
+              <input id="f-email" name="email" type="email" autocomplete="email" placeholder="voce@exemplo.com" required>
+            </div>
+            <div class="field">
+              <label for="f-msg">Mensagem</label>
+              <textarea id="f-msg" name="message" rows="5" placeholder="Conte um pouco sobre o que você precisa…" required></textarea>
+            </div>
+            <button class="btn btn--primary btn--block" type="submit">
+              Enviar mensagem
+              <svg class="icon" aria-hidden="true"><use href="#i-send"/></svg>
+            </button>
+            <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================== FOOTER ============================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© <span id="year">2026</span> Seu Nome. Todos os direitos reservados.</p>
+      <p class="mono footer__made">Feito com HTML, CSS e JavaScript</p>
+    </div>
+  </footer>
+
+  <a class="to-top" id="toTop" href="#home" aria-label="Voltar ao topo">
+    <svg class="icon" aria-hidden="true"><use href="#i-arrow-up"/></svg>
+  </a>
+
+  <!-- ============================== ÍCONES (sprite) ============================== -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></symbol>
+      <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 12h18M3 6h18M3 18h18"/></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+      <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
+      <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></symbol>
+      <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></symbol>
+      <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37zM17.5 6.5h.01"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="m22 6-10 7L2 6"/></symbol>
+      <symbol id="i-external" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/></symbol>
+      <symbol id="i-code" viewBox="0 0 24 24"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></symbol>
+      <symbol id="i-server" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><path d="M6 6h.01M6 18h.01"/></symbol>
+      <symbol id="i-tool" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
+      <symbol id="i-users" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+      <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></symbol>
+      <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+      <symbol id="i-send" viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></symbol>
+    </defs>
+  </svg>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
